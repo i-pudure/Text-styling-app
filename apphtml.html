@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Text Styler</title>
+  </head>
+  <body>
+    <textarea id="input"></textarea>
+    <button onclick="styleText()">Style Text</button>
+    <div id="output"></div>
+
+    <script>
+      function styleText() {
+        // Get the input text
+        var input = document.getElementById("input").value;
+
+        // Split the input into words
+        var words = input.split(" ");
+
+        // Loop through each word and style the first three letters
+        for (var i = 0; i < words.length; i++) {
+          var word = words[i];
+          if (word.length > 3) {
+            words[i] = "<b>" + word.substring(0, 3) + "</b>" + word.substring(3);
+          } else {
+            words[i] = "<b>" + word + "</b>";
+          }
+        }
+
+        // Join the words back together
+        var output = words.join(" ");
+
+        // Set the output text
+        document.getElementById("output").innerHTML = output;
+      }
+    </script>
+  </body>
+</html>
+/
+
+
+
+
+
